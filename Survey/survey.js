@@ -1,17 +1,14 @@
 function submitForm() {
-    // Add your form validation logic here
-    // You can check if all fields are filled and perform any other necessary validations
-    
-    // Check if at least one gender radio button is selected
+
     const genderMale = document.querySelector('input[name="gender"][value="Male"]').checked;
     const genderFemale = document.querySelector('input[name="gender"][value="Female"]').checked;
 
     if (!genderMale && !genderFemale) {
         alert("Please select a gender.");
-        return false; // Prevent form submission
+        return false; 
     }
 
-    // Display a popup with the selected values
+
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const dob = document.getElementById("dob").value;
@@ -37,19 +34,18 @@ function submitForm() {
     document.getElementById("popupContent").innerHTML = popupContent;
     document.getElementById("popup").style.display = "flex";
     
-    // Reset the form
+
     document.getElementById("surveyForm").reset();
     
-    return false; // Prevent form submission
+    return false; 
 }
 
 function resetForm() {
     document.getElementById("surveyForm").reset();
 }
 function closePopup() {
-    // Hide the popup
+
     document.getElementById("popup").style.display = "none";
 
-    // Reset the form
     resetForm();
 }
